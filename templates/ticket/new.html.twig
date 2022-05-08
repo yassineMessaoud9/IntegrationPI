@@ -1,0 +1,39 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block title %}New Ticket{% endblock %}
+
+{%  block stylesheet %}
+<link href="{{asset('backoffice/css/datepicker.css')}}" rel="stylesheet"/>
+{%  endblock %}
+
+{% block body %}
+    {{ form_start(form, {attr:{novalidate:'novalidate'} }) }}
+
+
+    <div class="row  col-lg-7 col-md-8 center shadow rounded" style="background-color:#ffffffff; margin-top: 1%">
+        <div class="col">
+            <div class="d-flex mb-3">
+                <a class="btn btn-primary mt-3" style="max-height: 35px" href="{{ path('app_ticket_index') }}"><i class="fa fa fa-angle-left"aria-hidden="true"></i></a>
+
+            </div>
+
+            {{ form_start(form,{attr:{novalidate:'novalidate'}}) }}
+
+            <h1 style="margin-top: 5%">Create new Ticket</h1>
+
+            {{ include('ticket/_form.html.twig') }}
+
+
+
+            {{ form_end(form) }}
+
+
+            <a href="{{ path('app_ticket_index') }}" class="btn btn-secondary btn-lg btn-block " style="margin:1% " role="button" aria-pressed="true">back to list</a>
+
+        </div> </div>
+
+
+
+    {{ form_end(form) }}
+
+{% endblock %}
